@@ -1,13 +1,29 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChatComponent } from './chat/chat.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [ChatComponent],
+  template: `
+    <details>
+      <summary>Chat</summary>
+      <app-chat/>
+    </details>
+  `,
+  styles: `
+   details {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+   }
+   summary {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 400px;
+   }
+  `
 })
 export class AppComponent {
-  title = 'deferrable-views-demo';
 }
